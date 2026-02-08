@@ -32,13 +32,13 @@
             height: 40vw;
             border-radius: 50%;
             filter: blur(140px);
-            opacity: 0.1;
+            opacity: 0.12;
             transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
             transform: translate(-50%, -50%);
             background: radial-gradient(circle, var(--accent-main) 0%, transparent 70%);
         }
 
-        /* Scrollbar */
+        /* Scrollbar Personalizada */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #f9f9f9; }
         ::-webkit-scrollbar-thumb { background: #ddd; }
@@ -64,7 +64,7 @@
             filter: grayscale(0);
         }
 
-        /* Classes SVG Fixas (Estrutura da Logo) */
+        /* Classes SVG Fixas do Illustrator */
         .st0 { fill: url(#Sfumatura_senza_nome_1278); }
         .st1 { fill: url(#Sfumatura_senza_nome_127820); }
         .st2 { fill: url(#Sfumatura_senza_nome_127821); }
@@ -122,10 +122,10 @@
 
     <div id="digital-aura"></div>
 
-    <!-- Navegação Superior -->
+    <!-- Navegação -->
     <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-[rgba(0,0,0,0.05)]">
         <div class="max-w-[1800px] mx-auto flex justify-between items-center px-8 py-6">
-            <!-- Logo Solo - Estrutura Protegida -->
+            <!-- Logo Solo Protegida -->
             <div class="cursor-pointer group" onclick="setTab('Portal')">
                 <div class="h-10 md:h-12 w-auto">
                     <svg viewBox="0 0 1024 365.89" class="h-full w-auto">
@@ -134,7 +134,7 @@
                 </div>
             </div>
 
-            <!-- Menu -->
+            <!-- Menu Principal -->
             <div class="hidden md:flex items-center gap-10">
                 <button onclick="setTab('Portal')" class="nav-item active" id="nav-Portal">Portal</button>
                 <button onclick="setTab('Exposições')" class="nav-item" id="nav-Exposições">Exposições</button>
@@ -149,11 +149,11 @@
         </div>
     </nav>
 
+    <!-- Content Wrapper -->
     <main id="main-content" class="pt-[90px] md:pt-[100px] relative z-10">
-        <!-- Conteúdo dinâmico aqui -->
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Istitucional -->
     <footer class="mt-40 border-t border-[rgba(0,0,0,0.05)] bg-white px-8 py-24 relative z-10">
         <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20 text-left">
             <div class="md:col-span-2 space-y-8">
@@ -163,11 +163,11 @@
                     </svg>
                 </div>
                 <p class="text-gray-400 text-[10px] font-mono uppercase tracking-widest leading-relaxed max-w-sm">
-                    Espaço físico e plataforma curatorial dedicada à arte tecnológica. Liderada por Byron Mendes.
+                    Espaço físico e plataforma curatorial dedicada à arte tecnológica e Web3. Liderada por Byron Mendes no Rio de Janeiro.
                 </p>
                 <div class="flex gap-4">
                     <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Microbiomas Poéticos em cartaz</span>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Microbiomas Poéticos — Em Exibição</span>
                 </div>
             </div>
             <div>
@@ -191,30 +191,8 @@
     <!-- ESTRUTURA GLOBAL DA LOGO (DEFINIÇÃO PROTEGIDA) -->
     <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
         <defs>
-            <!-- Todos os 22 Gradientes Originais -->
             <linearGradient id="Sfumatura_senza_nome_1278" x1="342.07" y1="12.72" x2="97.05" y2="265.47" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff31fa"/><stop offset=".1" stop-color="#f830f5"/><stop offset=".24" stop-color="#e72de9"/><stop offset=".4" stop-color="#ca2ad4"/><stop offset=".57" stop-color="#a324b7"/><stop offset=".76" stop-color="#701e92"/><stop offset=".95" stop-color="#321666"/><stop offset="1" stop-color="#23145b"/></linearGradient>
-            <linearGradient id="Sfumatura_senza_nome_12781" x1="414.07" y1="82.52" x2="169.05" y2="335.27" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12782" x1="452.52" y1="119.79" x2="207.5" y2="372.55" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12783" x1="498.65" y1="164.51" x2="253.63" y2="417.27" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12784" x1="296.36" y1="372.83" x2="765.76" y2="113.62" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12785" x1="327.51" y1="429.25" x2="796.92" y2="170.04" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12786" x1="334.15" y1="441.26" x2="803.55" y2="182.05" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12787" x1="343.76" y1="458.66" x2="813.16" y2="199.46" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12788" x1="367.4" y1="501.48" x2="836.8" y2="242.27" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_12789" x1="382.68" y1="529.16" x2="852.09" y2="269.95" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127810" x1="401.56" y1="563.34" x2="870.97" y2="304.14" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127811" x1="325.42" y1="168.19" x2="415.38" y2="35.61" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127812" x1="325.42" y1="168.19" x2="415.38" y2="35.61" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127813" x1="321.59" y1="183.99" x2="406.88" y2="58.27" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127814" x1="400.94" y1="-6.97" x2="525.03" y2="175" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127815" x1="493.86" y1="168.35" x2="583.82" y2="35.76" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127816" x1="610.4" y1="50.83" x2="722.84" y2="215.7" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127817" x1="457.23" y1="-110.08" x2="-208.95" y2="774.18" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127818" x1="491.48" y1="5.93" x2="574.77" y2="128.06" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127819" x1="513.21" y1="45.85" x2="581.81" y2="146.45" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127820" x1="581.71" y1="171.34" x2="616.71" y2="96.79" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127821" x1="578.96" y1="176.1" x2="645.81" y2="58.25" xlink:href="#Sfumatura_senza_nome_1278"/>
-            <linearGradient id="Sfumatura_senza_nome_127822" x1="688.76" y1="163.22" x2="696.13" y2="140.19" xlink:href="#Sfumatura_senza_nome_1278"/>
+            <linearGradient id="Sfumatura_senza_nome_12781" x1="414.07" y1="82.52" x2="169.05" y2="335.27" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12782" x1="452.52" y1="119.79" x2="207.5" y2="372.55" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12783" x1="498.65" y1="164.51" x2="253.63" y2="417.27" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12784" x1="296.36" y1="372.83" x2="765.76" y2="113.62" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12785" x1="327.51" y1="429.25" x2="796.92" y2="170.04" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12786" x1="334.15" y1="441.26" x2="803.55" y2="182.05" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12787" x1="343.76" y1="458.66" x2="813.16" y2="199.46" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12788" x1="367.4" y1="501.48" x2="836.8" y2="242.27" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_12789" x1="382.68" y1="529.16" x2="852.09" y2="269.95" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127810" x1="401.56" y1="563.34" x2="870.97" y2="304.14" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127811" x1="325.42" y1="168.19" x2="415.38" y2="35.61" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127812" x1="325.42" y1="168.19" x2="415.38" y2="35.61" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127813" x1="321.59" y1="183.99" x2="406.88" y2="58.27" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127814" x1="400.94" y1="-6.97" x2="525.03" y2="175" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127815" x1="493.86" y1="168.35" x2="583.82" y2="35.76" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127816" x1="610.4" y1="50.83" x2="722.84" y2="215.7" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127817" x1="457.23" y1="-110.08" x2="-208.95" y2="774.18" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127818" x1="491.48" y1="5.93" x2="574.77" y2="128.06" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127819" x1="513.21" y1="45.85" x2="581.81" y2="146.45" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127820" x1="581.71" y1="171.34" x2="616.71" y2="96.79" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127821" x1="578.96" y1="176.1" x2="645.81" y2="58.25" xlink:href="#Sfumatura_senza_nome_1278"/><linearGradient id="Sfumatura_senza_nome_127822" x1="688.76" y1="163.22" x2="696.13" y2="140.19" xlink:href="#Sfumatura_senza_nome_1278"/>
 
             <symbol id="full-locked-logo" viewBox="0 0 1024 365.89">
                 <g>
@@ -254,29 +232,29 @@
     </svg>
 
     <script>
-        // --- CONTENT STORAGE ---
+        // --- DATABASE ---
         const BYRON = {
             name: "Byron Mendes",
-            role: "Founder & Curator",
+            role: "Founder & CEO",
             photo: "https://metaverseagency.art/wp-content/uploads/2026/01/Byron-%C2%A9-Renato-Mangolin-008-scaled.jpg",
-            bio: "Byron Mendes é pioneiro na gestão de ativos digitais e curadoria de arte tecnológica no Brasil, liderando a convergência entre o mercado tradicional e a Web3 através da Meta Gallery."
+            bio: "Pioneiro na gestão de ativos digitais e curadoria de arte tecnológica no Brasil, Byron Mendes lidera a convergência entre o mercado tradicional e a Web3 através da Meta Gallery."
         };
 
         const EXHIBITIONS = [
-            { id: "microbiomas", title: "Microbiomas Poéticos", status: "Em Cartaz", date: "17 Dez 2025 — 17 Mar 2026", img: "https://metaverseagency.art/wp-content/uploads/2026/01/IMG_9836-scaled.jpg" },
-            { id: "criptoarte", title: "Mostra Criptoarte", status: "Arquivo", date: "Jul — Out 2024", img: "https://metaverseagency.art/wp-content/uploads/2025/10/Exposicao-CCBB-Rio-de-Janeiro-097.jpg" }
+            { id: "microbiomas", title: "Microbiomas Poéticos", status: "Em Cartaz", date: "17 Dez 2025 — 17 Mar 2026", img: "https://metaverseagency.art/wp-content/uploads/2026/01/IMG_9836-scaled.jpg", desc: "Uma exploração sobre o invisível através de dados biológicos em tempo real." },
+            { id: "criptoarte", title: "Mostra Criptoarte", status: "Arquivo", date: "Jul — Out 2024", img: "https://metaverseagency.art/wp-content/uploads/2025/10/Exposicao-CCBB-Rio-de-Janeiro-097.jpg", desc: "A primeira grande exposição dedicada a NFTs num museu nacional." }
         ];
 
         const ARTISTS = [
-            { name: "Rejane Cantoni", role: "Artista Digital", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330", bio: "Famosa pelas suas instalações imersivas que expandem a percepção sensorial humana através da tecnologia." }
+            { name: "Rejane Cantoni", role: "Artista Digital", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330", bio: "Famosa pelas suas instalações imersivas que utilizam tecnologia para expandir a percepção sensorial humana." }
         ];
 
         const PRESS = [
-            { title: "Rio ganha a primeira galeria de criptoarte", source: "Exame", date: "09/07/2024", img: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0" },
-            { title: "Meta Gallery inaugura com foco em IA", source: "O Globo", date: "23/10/2025", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" }
+            { title: "Rio ganha a primeira galeria de criptoarte", source: "Exame", date: "09/07/2024", img: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0", url: "#" },
+            { title: "Meta Gallery inaugura com foco em IA", source: "O Globo", date: "23/10/2025", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe", url: "#" }
         ];
 
-        // --- ENGINE ---
+        // --- CORE ENGINE ---
         let activeTab = 'Portal';
         const aura = document.getElementById('digital-aura');
 
@@ -290,14 +268,12 @@
         }
 
         function updateUI() {
-            // Update Menu Visuals
             const navItems = document.querySelectorAll('.nav-item');
             if (navItems.length > 0) {
                 navItems.forEach(el => {
                     el.classList.toggle('active', el.id === `nav-${activeTab}`);
                 });
             }
-
             renderContent();
             lucide.createIcons();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -345,7 +321,7 @@
             return `
             <section class="px-8 py-24 fade-in text-left relative z-10">
                 <div class="max-w-[1800px] mx-auto">
-                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-16 block italic text-left">Arquivo Digital</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-16 block italic">Archive</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24">
                         ${EXHIBITIONS.map(i => `
                             <div class="group cursor-pointer">
@@ -354,7 +330,7 @@
                                 </div>
                                 <div class="space-y-2">
                                     <span class="text-[9px] font-mono uppercase tracking-widest text-purple-500">${i.date}</span>
-                                    <h3 class="text-2xl font-black uppercase">${i.title}</h3>
+                                    <h3 class="text-2xl font-black uppercase tracking-tighter">${i.title}</h3>
                                 </div>
                             </div>
                         `).join('')}
@@ -367,7 +343,7 @@
             return `
             <section class="px-8 py-24 fade-in text-left relative z-10">
                 <div class="max-w-[1800px] mx-auto">
-                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic text-left">Roster</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic">Roster</span>
                     <div class="grid grid-cols-1 gap-px bg-black/5 border border-black/5">
                         ${ARTISTS.map(a => `
                             <div class="bg-white p-12 md:p-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -378,7 +354,7 @@
                                 </div>
                                 <div class="lg:col-span-9 flex flex-col justify-center">
                                     <span class="text-[9px] font-mono text-purple-500 uppercase tracking-widest mb-4">${a.role}</span>
-                                    <h2 class="text-5xl md:text-7xl font-black uppercase">${a.name}</h2>
+                                    <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-tight">${a.name}</h2>
                                     <p class="text-xl md:text-2xl font-light text-gray-500 leading-relaxed max-w-3xl">${a.bio}</p>
                                 </div>
                             </div>
@@ -392,7 +368,7 @@
             return `
             <section class="px-8 py-24 fade-in text-left relative z-10">
                 <div class="max-w-[1400px] mx-auto">
-                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic">Clipping</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic text-left">Clipping // Media</span>
                     <div class="space-y-px bg-black/10">
                         ${PRESS.map(c => `
                             <div class="bg-white p-10 flex flex-col md:flex-row items-center gap-12 group hover:bg-gray-50 transition-all text-black">
@@ -400,7 +376,7 @@
                                     ${c.source}
                                 </div>
                                 <div class="flex-1 text-left">
-                                    <h4 class="text-2xl md:text-4xl font-black uppercase">${c.title}</h4>
+                                    <h4 class="text-2xl md:text-4xl font-black uppercase tracking-tighter group-hover:text-purple-600 transition-colors">${c.title}</h4>
                                     <p class="text-[10px] font-mono text-gray-400 mt-2 uppercase">${c.date}</p>
                                 </div>
                                 <i data-lucide="arrow-up-right" class="w-6 h-6 text-black/20 group-hover:text-black"></i>
@@ -415,7 +391,7 @@
             return `
             <section class="px-8 py-24 fade-in text-left relative z-10">
                 <div class="max-w-[1400px] mx-auto space-y-32">
-                    <!-- Perfil Byron Mendes Institucional -->
+                    <!-- Perfil Byron Mendes -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                         <div class="lg:col-span-4">
                             <div class="img-container aspect-square rounded-full overflow-hidden">
@@ -431,17 +407,17 @@
                         </div>
                     </div>
 
-                    <!-- Dados da Visita -->
+                    <!-- Informações Práticas -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-32 pt-24 border-t border-black/10">
                         <div class="space-y-12">
                             <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8]">Visita</h2>
-                            <div class="pt-8 space-y-8">
+                            <div class="pt-8 space-y-8 text-left">
                                 <div>
-                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2 text-left">Endereço</h4>
+                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2">Endereço</h4>
                                     <p class="text-lg font-light uppercase tracking-widest">Rua da Assembleia, 40 — Centro, RJ</p>
                                 </div>
                                 <div>
-                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2 text-left">Horário</h4>
+                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2">Horário</h4>
                                     <p class="text-lg font-light uppercase tracking-widest">Terça a Sábado: 11:00 — 19:00</p>
                                 </div>
                             </div>
@@ -449,7 +425,7 @@
                         <div class="img-container aspect-[16/10] bg-gray-100 flex items-center justify-center">
                              <div class="border border-black/10 w-full h-full flex items-center justify-center flex-col gap-6 text-center">
                                 <i data-lucide="map-pin" class="w-16 h-16 text-purple-500"></i>
-                                <span class="text-[10px] font-black uppercase tracking-widest">Rio de Janeiro, Brasil</span>
+                                <span class="text-[10px] font-black uppercase tracking-widest text-center">Rio de Janeiro, Brasil</span>
                              </div>
                         </div>
                     </div>
@@ -457,7 +433,7 @@
             </section>`;
         }
 
-        // Initialize with Safety
+        // Initialize with DOM ready safety
         window.onload = function() {
             updateUI();
         };
