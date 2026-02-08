@@ -129,7 +129,7 @@
             <div class="cursor-pointer group" onclick="setTab('Portal')">
                 <div class="h-10 md:h-12 w-auto">
                     <svg viewBox="0 0 1024 365.89" class="h-full w-auto">
-                        <use href="#full-locked-logo"></use>
+                        <use xlink:href="#full-locked-logo" href="#full-locked-logo"></use>
                     </svg>
                 </div>
             </div>
@@ -149,17 +149,17 @@
         </div>
     </nav>
 
-    <main id="main-content" class="pt-[90px] md:pt-[100px]">
+    <main id="main-content" class="pt-[90px] md:pt-[100px] relative z-10">
         <!-- Conteúdo dinâmico aqui -->
     </main>
 
     <!-- Footer -->
-    <footer class="mt-40 border-t border-[rgba(0,0,0,0.05)] bg-white px-8 py-24">
+    <footer class="mt-40 border-t border-[rgba(0,0,0,0.05)] bg-white px-8 py-24 relative z-10">
         <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20 text-left">
             <div class="md:col-span-2 space-y-8">
                 <div class="h-12 w-auto opacity-80 grayscale hover:grayscale-0 transition-all">
                     <svg viewBox="0 0 1024 365.89" class="h-full w-auto">
-                        <use href="#full-locked-logo"></use>
+                        <use xlink:href="#full-locked-logo" href="#full-locked-logo"></use>
                     </svg>
                 </div>
                 <p class="text-gray-400 text-[10px] font-mono uppercase tracking-widest leading-relaxed max-w-sm">
@@ -290,9 +290,14 @@
         }
 
         function updateUI() {
-            document.querySelectorAll('.nav-item').forEach(el => {
-                el.classList.toggle('active', el.id === `nav-${activeTab}`);
-            });
+            // Update Menu Visuals
+            const navItems = document.querySelectorAll('.nav-item');
+            if (navItems.length > 0) {
+                navItems.forEach(el => {
+                    el.classList.toggle('active', el.id === `nav-${activeTab}`);
+                });
+            }
+
             renderContent();
             lucide.createIcons();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -300,6 +305,8 @@
 
         function renderContent() {
             const container = document.getElementById('main-content');
+            if (!container) return;
+
             switch(activeTab) {
                 case 'Portal': container.innerHTML = renderHero(); break;
                 case 'Exposições': container.innerHTML = renderExhibitions(); break;
@@ -312,11 +319,10 @@
         function renderHero() {
             const f = EXHIBITIONS[0];
             return `
-            <section class="fade-in px-8 py-12 md:py-20 text-left">
+            <section class="fade-in px-8 py-12 md:py-20 text-left relative z-10">
                 <div class="max-w-[1800px] mx-auto">
                     <div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden group">
                         <img src="${f.img}" class="w-full h-full object-cover transition-transform duration-[4s] group-hover:scale-105 opacity-90">
-                        <!-- Texto Minimalista sobreposto -->
                         <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-16 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                             <div class="flex items-center gap-4 mb-4 md:mb-6">
                                 <span class="px-3 py-1 bg-white text-black text-[9px] font-black uppercase tracking-[0.2em]">
@@ -336,20 +342,78 @@
         }
 
         function renderExhibitions() {
-            return `<section class="px-8 py-24 fade-in text-left"><div class="max-w-[1800px] mx-auto"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-16 block italic text-left">Arquivo Digital</span><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24">${EXHIBITIONS.map(i => `<div class="group cursor-pointer"><div class="img-container aspect-[4/5] mb-8"><img src="${i.img}" class="w-full h-full object-cover"></div><div class="space-y-2"><span class="text-[9px] font-mono uppercase tracking-widest text-purple-500">${i.date}</span><h3 class="text-2xl font-black uppercase">${i.title}</h3></div></div>`).join('')}</div></div></section>`;
+            return `
+            <section class="px-8 py-24 fade-in text-left relative z-10">
+                <div class="max-w-[1800px] mx-auto">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-16 block italic text-left">Arquivo Digital</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24">
+                        ${EXHIBITIONS.map(i => `
+                            <div class="group cursor-pointer">
+                                <div class="img-container aspect-[4/5] mb-8">
+                                    <img src="${i.img}" class="w-full h-full object-cover">
+                                </div>
+                                <div class="space-y-2">
+                                    <span class="text-[9px] font-mono uppercase tracking-widest text-purple-500">${i.date}</span>
+                                    <h3 class="text-2xl font-black uppercase">${i.title}</h3>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>`;
         }
 
         function renderArtists() {
-            return `<section class="px-8 py-24 fade-in text-left"><div class="max-w-[1800px] mx-auto"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic text-left">Roster</span><div class="grid grid-cols-1 gap-px bg-black/5 border border-black/5">${ARTISTS.map(a => `<div class="bg-white p-12 md:p-20 grid grid-cols-1 lg:grid-cols-12 gap-16"><div class="lg:col-span-3"><div class="img-container aspect-square rounded-full overflow-hidden"><img src="${a.photo}" class="w-full h-full object-cover"></div></div><div class="lg:col-span-9 flex flex-col justify-center"><span class="text-[9px] font-mono text-purple-500 uppercase tracking-widest mb-4">${a.role}</span><h2 class="text-5xl md:text-7xl font-black uppercase">${a.name}</h2><p class="text-xl md:text-2xl font-light text-gray-500 leading-relaxed max-w-3xl">${a.bio}</p></div></div>`).join('')}</div></div></section>`;
+            return `
+            <section class="px-8 py-24 fade-in text-left relative z-10">
+                <div class="max-w-[1800px] mx-auto">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic text-left">Roster</span>
+                    <div class="grid grid-cols-1 gap-px bg-black/5 border border-black/5">
+                        ${ARTISTS.map(a => `
+                            <div class="bg-white p-12 md:p-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
+                                <div class="lg:col-span-3">
+                                    <div class="img-container aspect-square rounded-full overflow-hidden">
+                                        <img src="${a.photo}" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-9 flex flex-col justify-center">
+                                    <span class="text-[9px] font-mono text-purple-500 uppercase tracking-widest mb-4">${a.role}</span>
+                                    <h2 class="text-5xl md:text-7xl font-black uppercase">${a.name}</h2>
+                                    <p class="text-xl md:text-2xl font-light text-gray-500 leading-relaxed max-w-3xl">${a.bio}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>`;
         }
 
         function renderPress() {
-            return `<section class="px-8 py-24 fade-in text-left"><div class="max-w-[1400px] mx-auto"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic">Clipping</span><div class="space-y-px bg-black/10">${PRESS.map(c => `<div class="bg-white p-10 flex flex-col md:flex-row items-center gap-12 group hover:bg-gray-50 transition-all text-black"><div class="w-32 h-20 shrink-0 opacity-40 group-hover:opacity-100 transition-opacity flex items-center justify-center border border-black/10 text-xs font-black uppercase italic">${c.source}</div><div class="flex-1 text-left"><h4 class="text-2xl md:text-4xl font-black uppercase">${c.title}</h4><p class="text-[10px] font-mono text-gray-400 mt-2 uppercase">${c.date}</p></div><i data-lucide="arrow-up-right" class="w-6 h-6 text-black/20 group-hover:text-black"></i></div>`).join('')}</div></div></section>`;
+            return `
+            <section class="px-8 py-24 fade-in text-left relative z-10">
+                <div class="max-w-[1400px] mx-auto">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic">Clipping</span>
+                    <div class="space-y-px bg-black/10">
+                        ${PRESS.map(c => `
+                            <div class="bg-white p-10 flex flex-col md:flex-row items-center gap-12 group hover:bg-gray-50 transition-all text-black">
+                                <div class="w-32 h-20 shrink-0 opacity-40 group-hover:opacity-100 transition-opacity flex items-center justify-center border border-black/10 text-xs font-black uppercase italic">
+                                    ${c.source}
+                                </div>
+                                <div class="flex-1 text-left">
+                                    <h4 class="text-2xl md:text-4xl font-black uppercase">${c.title}</h4>
+                                    <p class="text-[10px] font-mono text-gray-400 mt-2 uppercase">${c.date}</p>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-6 h-6 text-black/20 group-hover:text-black"></i>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>`;
         }
 
         function renderInfo() {
             return `
-            <section class="px-8 py-24 fade-in text-left">
+            <section class="px-8 py-24 fade-in text-left relative z-10">
                 <div class="max-w-[1400px] mx-auto space-y-32">
                     <!-- Perfil Byron Mendes Institucional -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -373,11 +437,11 @@
                             <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8]">Visita</h2>
                             <div class="pt-8 space-y-8">
                                 <div>
-                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2">Endereço</h4>
+                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2 text-left">Endereço</h4>
                                     <p class="text-lg font-light uppercase tracking-widest">Rua da Assembleia, 40 — Centro, RJ</p>
                                 </div>
                                 <div>
-                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2">Horário</h4>
+                                    <h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2 text-left">Horário</h4>
                                     <p class="text-lg font-light uppercase tracking-widest">Terça a Sábado: 11:00 — 19:00</p>
                                 </div>
                             </div>
@@ -393,7 +457,10 @@
             </section>`;
         }
 
-        renderContent();
+        // Initialize with Safety
+        window.onload = function() {
+            updateUI();
+        };
     </script>
 </body>
 </html>
