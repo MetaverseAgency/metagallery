@@ -52,7 +52,7 @@
             z-index: 5;
         }
         .img-container img {
-            transition: transform 2s ease;
+            transition: transform 2s ease, filter 1.2s ease;
             filter: grayscale(1);
         }
         .img-container:hover img {
@@ -60,7 +60,7 @@
             filter: grayscale(0);
         }
 
-        /* Estilos Obrigatórios do Logótipo SVG (Original Illustrator) */
+        /* Estrutura Fixa do Logótipo (Não alterar) */
         .st0 { fill: url(#Sfumatura_senza_nome_1278); }
         .st1 { fill: url(#Sfumatura_senza_nome_127820); }
         .st2 { fill: url(#Sfumatura_senza_nome_127821); }
@@ -109,16 +109,17 @@
             line-height: 0.9;
             letter-spacing: -0.05em;
         }
+
+        .article-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #555; }
     </style>
 </head>
 <body>
 
     <div id="digital-aura"></div>
 
-    <!-- Navegação Estilo Lisson -->
+    <!-- Navegação Superior -->
     <nav class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md border-b border-[rgba(0,0,0,0.05)]">
         <div class="max-w-[1800px] mx-auto flex justify-between items-center px-6 py-4 md:py-6">
-            <!-- LOGO INTEGRAL -->
             <div class="cursor-pointer" onclick="setTab('Portal')">
                 <div class="h-10 md:h-14 w-auto">
                     <svg viewBox="0 0 1024 365.89" class="h-full w-auto">
@@ -127,7 +128,6 @@
                 </div>
             </div>
 
-            <!-- Menu Desktop -->
             <div class="hidden md:flex items-center gap-10">
                 <button onclick="setTab('Portal')" class="nav-item active" id="nav-Portal">Portal</button>
                 <button onclick="setTab('Exposições')" class="nav-item" id="nav-Exposições">Exposições</button>
@@ -140,7 +140,6 @@
                 <button onclick="toggleMobileMenu()" class="p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
-        <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 flex flex-col p-6 gap-6">
             <button onclick="setTab('Portal'); toggleMobileMenu()" class="text-left text-[11px] font-bold uppercase tracking-widest">Portal</button>
             <button onclick="setTab('Exposições'); toggleMobileMenu()" class="text-left text-[11px] font-bold uppercase tracking-widest">Exposições</button>
@@ -150,11 +149,9 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main id="main-content" class="pt-[90px] md:pt-[120px] relative z-10 w-full min-h-screen">
     </main>
 
-    <!-- Footer -->
     <footer class="mt-20 border-t border-[rgba(0,0,0,0.05)] bg-white px-8 py-20 relative z-10">
         <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
             <div class="md:col-span-2 space-y-6">
@@ -167,16 +164,16 @@
             </div>
             <div>
                 <h3 class="text-[10px] font-bold uppercase tracking-widest mb-4 text-gray-800">Localização</h3>
-                <p class="text-[11px] font-mono text-gray-500 uppercase">Rua da Assembleia, 40<br>Centro, Rio de Janeiro</p>
+                <p class="text-[11px] font-mono text-gray-500 uppercase text-left">Rua da Assembleia, 40<br>Centro, Rio de Janeiro</p>
             </div>
             <div>
-                <h3 class="text-[10px] font-bold uppercase tracking-widest mb-4 text-gray-800 uppercase">Direitos</h3>
-                <p class="text-[11px] font-mono text-gray-500 uppercase">© 2026 METAVERSE AGENCY</p>
+                <h3 class="text-[10px] font-bold uppercase tracking-widest mb-4 text-gray-800 uppercase text-left">Direitos</h3>
+                <p class="text-[11px] font-mono text-gray-500 uppercase text-left">© 2026 METAVERSE AGENCY</p>
             </div>
         </div>
     </footer>
 
-    <!-- BLOCO DE DEFINIÇÃO GLOBAL DA LOGO (BLOQUEADO) -->
+    <!-- BLOCO DE DEFINIÇÃO GLOBAL DA LOGO (CONGELADO) -->
     <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
         <defs>
             <linearGradient id="Sfumatura_senza_nome_1278" x1="342.07" y1="12.72" x2="97.05" y2="265.47" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff31fa"/><stop offset=".1" stop-color="#f830f5"/><stop offset=".24" stop-color="#e72de9"/><stop offset=".4" stop-color="#ca2ad4"/><stop offset=".57" stop-color="#a324b7"/><stop offset=".76" stop-color="#701e92"/><stop offset=".95" stop-color="#321666"/><stop offset="1" stop-color="#23145b"/></linearGradient>
@@ -184,7 +181,6 @@
 
             <symbol id="full-locked-logo" viewBox="0 0 1024 365.89">
                 <g>
-                    <!-- METAVERSE COMPLETO -->
                     <path class="st0" d="M46.52,310.41v-110.3h16.86l48.22,80.52h-8.82l47.43-80.52h16.86l.32,110.3h-19.7v-79.89h3.94l-40.02,67.44h-9.3l-40.97-67.44h4.73v79.89h-19.54Z"/>
                     <path class="st14" d="M234.67,311.51c-9.35,0-17.52-1.86-24.5-5.59-6.99-3.73-12.4-8.82-16.23-15.28-3.84-6.46-5.75-13.89-5.75-22.3s1.86-15.84,5.59-22.3c3.73-6.46,8.88-11.55,15.44-15.28,6.56-3.73,14.05-5.59,22.45-5.59s15.49,1.81,21.9,5.44c6.41,3.62,11.45,8.69,15.13,15.21,3.68,6.52,5.52,14.24,5.52,23.16,0,.74-.03,1.65-.08,2.76-.05,1.1-.13,2.08-.24,2.92h-70.12v-13.08h59.72l-7.88,4.1c.1-4.73-.87-8.95-2.92-12.68-2.05-3.73-4.86-6.62-8.43-8.67-3.57-2.05-7.78-3.07-12.61-3.07s-8.96,1.02-12.68,3.07c-3.73,2.05-6.59,4.96-8.59,8.75-2,3.78-2.99,8.14-2.99,13.08v3.15c0,5.04,1.13,9.51,3.39,13.39,2.26,3.89,5.49,6.91,9.69,9.06,4.2,2.15,9.09,3.23,14.65,3.23,4.73,0,8.98-.79,12.76-2.36s7.14-3.89,10.08-6.93l10.72,12.29c-3.89,4.41-8.69,7.78-14.42,10.09-5.73,2.31-12.27,3.47-19.62,3.47Z"/>
                     <path class="st17" d="M281.94,242.65v-15.76h56.1v15.76h-56.1ZM324.8,311.51c-9.25,0-16.39-2.39-21.43-7.17-5.04-4.78-7.56-11.79-7.56-21.04v-75.64h19.54v75.01c0,3.99,1.05,7.09,3.15,9.3,2.1,2.21,5.04,3.31,8.82,3.31,4.31,0,7.88-1.15,10.72-3.47l5.67,14.02c-2.42,1.89-5.31,3.31-8.67,4.25-3.36.95-6.78,1.42-10.24,1.42Z"/>
@@ -196,7 +192,6 @@
                     <path class="st22" d="M788.7,311.04c-8.3,0-15.63-1.79-21.98-5.36-6.36-3.57-11.35-8.51-14.97-14.81-3.62-6.3-5.44-13.5-5.44-21.59s1.71-15.42,5.12-21.67c3.41-6.25,8.11-11.16,14.1-14.73,5.99-3.57,12.71-5.36,20.17-5.36s14.16,1.73,20.09,5.2c5.93,3.47,10.61,8.33,14.02,14.58,3.41,6.25,5.12,13.47,5.12,21.67,0,.32-.03.66-.08,1.02-.05.37-.08.76-.08,1.18h-72.64v-6.15h68.39l-3.15,2.99c.1-6.41-1.24-12.16-4.02-17.25-2.78-5.09-6.54-9.09-11.27-11.98-4.73-2.89-10.19-4.33-16.39-4.33s-11.53,1.45-16.31,4.33c-4.78,2.89-8.54,6.88-11.27,11.98-2.73,5.1-4.1,10.9-4.1,17.41v1.42c0,6.72,1.5,12.68,4.49,17.88,2.99,5.2,7.12,9.25,12.37,12.13,5.25,2.89,11.24,4.33,17.96,4.33,5.25,0,10.16-.95,14.73-2.84,4.57-1.89,8.43-4.78,11.58-8.67l4.57,5.2c-3.57,4.41-8.06,7.75-13.47,10.01-5.41,2.26-11.27,3.39-17.57,3.39Z"/>
                     <path class="st16" d="M849.37,310.41v-82.26h7.56v22.53l-.79-2.52c2.31-6.62,6.2-11.71,11.66-15.28,5.46-3.57,12.29-5.36,20.48-5.36v7.72c-.31,0-.63-.02-.95-.08-.32-.05-.63-.08-.95-.08-9.14,0-16.28,2.86-21.43,8.59-5.15,5.73-7.72,13.68-7.72,23.87v42.86h-7.88Z"/>
                     <path class="st4" d="M909.56,341.61c-3.78,0-7.33-.63-10.64-1.89-3.31-1.26-6.12-3.1-8.43-5.52l3.94-5.99c2.1,2.21,4.39,3.83,6.85,4.88,2.47,1.05,5.28,1.58,8.43,1.58,3.78,0,7.12-1.05,10.01-3.15,2.89-2.1,5.59-5.94,8.11-11.5l5.67-12.61,1.1-1.42,34.82-77.84h8.04l-42.23,93.44c-2.21,5.04-4.6,9.01-7.17,11.9-2.57,2.89-5.38,4.96-8.43,6.22-3.05,1.26-6.41,1.89-10.09,1.89ZM933.35,312.45l-38.13-84.3h8.35l34.67,77.37-4.89,6.93Z"/>
-                    <!-- SÍMBOLO DA ROSA COMPLETO -->
                     <path class="st8" d="M347.6,157.42h-37.16L395.24,14.98h0c25.75,0,41.89,26.69,29.12,48.15l-45.9,77.1c-6.33,10.63-18.1,17.18-30.85,17.18Z"/>
                     <path class="st5" d="M347.6,157.42h-37.16L395.24,14.98h0c25.75,0,41.89,26.69,29.12,48.15l-45.9,77.1c-6.33,10.63-18.1,17.18-30.85,17.18Z"/>
                     <path class="st6" d="M377.32,140.23l45.9-77.1c10.23-17.19,1.9-37.73-15.06-45.22l-83.06,139.51h21.37c12.75,0,24.53-6.56,30.85-17.18Z"/>
@@ -223,23 +218,24 @@
             name: "Byron Mendes",
             role: "Founder & Curator",
             photo: "https://metaverseagency.art/wp-content/uploads/2026/01/Byron-%C2%A9-Renato-Mangolin-008-scaled.jpg",
-            bio: "Byron Mendes lidera a gestão de ativos digitais e curadoria de arte tecnológica no Brasil, sendo o fundador da Meta Gallery e pioneiro na Web3 nacional."
+            bio: "Pioneiro na gestão de ativos digitais e curadoria de arte tecnológica no Brasil, Byron Mendes lidera a convergência entre o mercado tradicional e a Web3 através da Meta Gallery."
         };
 
         const EXHIBITIONS = [
-            { id: "microbiomas", title: "Microbiomas Poéticos", status: "Em Cartaz", date: "17 Dez 2025 — 17 Mar 2026", img: "https://metaverseagency.art/wp-content/uploads/2026/01/IMG_9836-scaled.jpg" },
-            { id: "criptoarte", title: "Mostra Criptoarte", status: "Arquivo", date: "Jul — Out 2024", img: "https://metaverseagency.art/wp-content/uploads/2025/10/Exposicao-CCBB-Rio-de-Janeiro-097.jpg" }
+            { id: "microbiomas", title: "Microbiomas Poéticos", subtitle: "Coabitar o Invisível", status: "Em Cartaz", date: "17 Dez 2025 — 17 Mar 2026", img: "https://metaverseagency.art/wp-content/uploads/2026/01/IMG_9836-scaled.jpg", desc: "Uma exploração do invisível através de dados biológicos em tempo real. Os visitantes interagem com obras que traduzem fluxos biológicos em experiências visuais generativas.", location: "Rua da Assembleia, 40" },
+            { id: "criptoarte", title: "Mostra Criptoarte", subtitle: "1ª Edição Nacional CCBB", status: "Arquivo", date: "Jul — Out 2024", img: "https://metaverseagency.art/wp-content/uploads/2025/10/Exposicao-CCBB-Rio-de-Janeiro-097.jpg", desc: "A maior exposição de criptoarte da América Latina, reunindo 25 artistas pioneiros.", location: "CCBB Rio de Janeiro / SP" }
         ];
 
         const ARTISTS = [
-            { name: "Rejane Cantoni", role: "Artista Digital", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330", bio: "Instalações imersivas que expandem a percepção sensorial humana." }
+            { name: "Rejane Cantoni", role: "Artista Digital", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330", bio: "Famosa pelas suas instalações imersivas que expandem a percepção sensorial humana." }
         ];
 
         const PRESS = [
-            { title: "Rio ganha a primeira galeria de criptoarte", source: "Exame", date: "09/07/2024", img: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0", url: "https://exame.com" }
+            { title: "Rio ganha a primeira galeria de criptoarte", source: "Exame", date: "09/07/2024", url: "#" }
         ];
 
         let activeTab = 'Portal';
+        let currentProjectId = null;
         const aura = document.getElementById('digital-aura');
 
         window.addEventListener('mousemove', (e) => {
@@ -258,6 +254,12 @@
 
         function setTab(tab) {
             activeTab = tab;
+            currentProjectId = null;
+            updateUI();
+        }
+
+        function openProject(id) {
+            currentProjectId = id;
             updateUI();
         }
 
@@ -271,41 +273,70 @@
             if (!container) return;
 
             let html = '';
-            switch(activeTab) {
-                case 'Portal': html = renderHero(); break;
-                case 'Exposições': html = renderExhibitions(); break;
-                case 'Artistas': html = renderArtists(); break;
-                case 'Imprensa': html = renderPress(); break;
-                case 'Info': html = renderInfo(); break;
-                default: html = renderHero();
+            if (currentProjectId) {
+                html = renderProjectDetails(currentProjectId);
+            } else {
+                switch(activeTab) {
+                    case 'Portal': html = renderHero(); break;
+                    case 'Exposições': html = renderExhibitions(); break;
+                    case 'Artistas': html = renderArtists(); break;
+                    case 'Imprensa': html = renderPress(); break;
+                    case 'Info': html = renderInfo(); break;
+                    default: html = renderHero();
+                }
             }
-            
             container.innerHTML = html;
-            
-            if (window.lucide) {
-                window.lucide.createIcons();
-            }
+            if (window.lucide) window.lucide.createIcons();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function renderHero() {
             const f = EXHIBITIONS[0];
             return `
-            <section class="fade-in px-4 md:px-8 py-8 md:py-16 text-left relative z-10">
+            <section class="fade-in px-4 md:px-8 py-8 md:py-16 text-left relative z-20">
                 <div class="max-w-[1800px] mx-auto">
-                    <div class="relative w-full aspect-[4/5] md:aspect-[21/9] overflow-hidden group shadow-2xl">
+                    <div class="relative w-full aspect-[4/5] md:aspect-[21/9] overflow-hidden group shadow-2xl cursor-pointer" onclick="openProject('${f.id}')">
                         <img src="${f.img}" class="w-full h-full object-cover transition-transform duration-[4s] group-hover:scale-105 opacity-90">
                         <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-16 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="px-3 py-1 bg-white text-black text-[9px] font-black uppercase tracking-widest">
-                                    ${f.status}
-                                </span>
-                                <span class="text-white/80 text-[10px] font-mono">
-                                    ${f.date}
-                                </span>
+                                <span class="px-3 py-1 bg-white text-black text-[9px] font-black uppercase tracking-widest">${f.status}</span>
+                                <span class="text-white/80 text-[10px] font-mono">${f.date}</span>
                             </div>
-                            <h1 class="hero-title font-black uppercase text-white drop-shadow-2xl">
-                                ${f.title}
-                            </h1>
+                            <h1 class="hero-title font-black uppercase text-white">${f.title}</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>`;
+        }
+
+        function renderProjectDetails(id) {
+            const p = EXHIBITIONS.find(item => item.id === id);
+            return `
+            <section class="px-4 md:px-8 py-12 md:py-20 fade-in text-left relative z-20">
+                <div class="max-w-[1400px] mx-auto">
+                    <button onclick="setTab('Exposições')" class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors mb-12">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar ao Arquivo
+                    </button>
+                    <div class="grid lg:grid-cols-12 gap-16">
+                        <div class="lg:col-span-8">
+                            <div class="img-container aspect-[16/10] mb-12 shadow-2xl">
+                                <img src="${p.img}" class="w-full h-full object-cover grayscale-0">
+                            </div>
+                            <div class="space-y-6">
+                                <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter">${p.title}</h1>
+                                <h2 class="text-xl md:text-3xl font-light text-gray-500 uppercase tracking-widest">${p.subtitle}</h2>
+                                <div class="article-content pt-8 border-t border-gray-100"><p class="text-lg md:text-xl leading-relaxed text-gray-700">${p.desc}</p></div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 h-fit sticky top-48">
+                            <div class="p-8 border border-gray-100 bg-gray-50/50 space-y-8">
+                                <h4 class="text-[10px] font-bold uppercase tracking-widest border-b border-gray-200 pb-4 text-left">Especificações</h4>
+                                <div class="space-y-4">
+                                    <div><p class="text-[9px] font-bold uppercase text-gray-400">Local</p><p class="text-sm uppercase font-bold">${p.location}</p></div>
+                                    <div><p class="text-[9px] font-bold uppercase text-gray-400">Data</p><p class="text-sm uppercase font-bold">${p.date}</p></div>
+                                </div>
+                                <button onclick="setTab('Info')" class="w-full py-4 bg-black text-white text-[9px] font-black uppercase tracking-widest hover:bg-purple-600 transition-colors">Informações</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -313,45 +344,51 @@
         }
 
         function renderExhibitions() {
-            return `<section class="px-8 py-24 fade-in text-left relative z-10"><div class="max-w-[1800px] mx-auto text-left"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-16 block italic text-left">Arquivo Digital</span><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24 text-left">${EXHIBITIONS.map(i => `<div class="group cursor-pointer text-left"><div class="img-container aspect-[4/5] mb-8"><img src="${i.img}" class="w-full h-full object-cover"></div><div class="space-y-2 text-left"><span class="text-[9px] font-mono uppercase tracking-widest text-purple-500">${i.date}</span><h3 class="text-2xl font-black uppercase text-left">${i.title}</h3></div></div>`).join('')}</div></div></section>`;
+            return `<section class="px-4 md:px-8 py-20 fade-in text-left relative z-20"><div class="max-w-[1800px] mx-auto text-left"><span class="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-12 block italic">Arquivo Digital</span><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24 text-left">${EXHIBITIONS.map(i => `<div class="group cursor-pointer text-left" onclick="openProject('${i.id}')"><div class="img-container aspect-[4/5] mb-8"><img src="${i.img}" class="w-full h-full object-cover"></div><div class="space-y-2 text-left"><span class="text-[9px] font-mono uppercase tracking-widest text-purple-500">${i.date}</span><h3 class="text-2xl font-black uppercase text-left">${i.title}</h3></div></div>`).join('')}</div></div></section>`;
         }
 
         function renderArtists() {
-            return `<section class="px-8 py-24 fade-in text-left relative z-10"><div class="max-w-[1800px] mx-auto text-left"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic text-left">Roster de Artistas</span><div class="grid grid-cols-1 gap-px bg-black/5 border border-black/5 text-left">${ARTISTS.map(a => `<div class="bg-white p-12 md:p-20 grid grid-cols-1 lg:grid-cols-12 gap-16 text-left"><div class="lg:col-span-3"><div class="img-container aspect-square rounded-full overflow-hidden"><img src="${a.photo}" class="w-full h-full object-cover"></div></div><div class="lg:col-span-9 flex flex-col justify-center text-left"><span class="text-[9px] font-mono text-purple-500 uppercase tracking-widest mb-4">${a.role}</span><h2 class="text-5xl md:text-7xl font-black uppercase text-left">${a.name}</h2><p class="text-xl md:text-2xl font-light text-gray-500 leading-relaxed max-w-3xl text-left">${a.bio}</p></div></div>`).join('')}</div></div></section>`;
+            return `<section class="px-4 md:px-8 py-20 fade-in text-left relative z-20"><div class="max-w-[1800px] mx-auto text-left"><span class="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-20 block italic">Roster</span><div class="grid grid-cols-1 gap-px bg-black/5 border border-black/5 text-left">${ARTISTS.map(a => `<div class="bg-white p-12 md:p-20 grid grid-cols-1 lg:grid-cols-12 gap-16"><div class="lg:col-span-3"><div class="img-container aspect-square rounded-full overflow-hidden"><img src="${a.photo}" class="w-full h-full object-cover"></div></div><div class="lg:col-span-9 flex flex-col justify-center text-left"><span class="text-[9px] font-mono text-purple-500 uppercase tracking-widest mb-4">${a.role}</span><h2 class="text-5xl md:text-7xl font-black uppercase">${a.name}</h2><p class="text-xl md:text-2xl font-light text-gray-500 leading-relaxed max-w-3xl">${a.bio}</p></div></div>`).join('')}</div></div></section>`;
         }
 
         function renderPress() {
-            return `<section class="px-8 py-24 fade-in text-left relative z-10"><div class="max-w-[1400px] mx-auto text-left"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic text-left">Clipping // Media</span><div class="space-y-px bg-black/10 text-left">${PRESS.map(c => `<a href="${c.url}" target="_blank" class="bg-white p-10 flex flex-col md:flex-row items-center gap-12 group hover:bg-gray-50 transition-all text-black no-underline text-left"><div class="w-32 h-20 shrink-0 opacity-40 group-hover:opacity-100 transition-opacity flex items-center justify-center border border-black/10 text-xs font-black uppercase italic">${c.source}</div><div class="flex-1 text-left"><h4 class="text-2xl md:text-4xl font-black uppercase text-left">${c.title}</h4><p class="text-[10px] font-mono text-gray-400 mt-2 uppercase text-left">${c.date}</p></div><i data-lucide="arrow-up-right" class="w-6 h-6 text-black/20 group-hover:text-black"></i></a>`).join('')}</div></div></section>`;
+            return `<section class="px-4 md:px-8 py-20 fade-in text-left relative z-20"><div class="max-w-[1400px] mx-auto text-left"><span class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400 mb-20 block italic">Clipping</span><div class="space-y-px bg-black/10 text-left">${PRESS.map(c => `<div class="bg-white p-10 flex flex-col md:flex-row items-center gap-12 group hover:bg-gray-50 transition-all text-black text-left"><div class="w-32 h-20 shrink-0 opacity-40 group-hover:opacity-100 transition-opacity flex items-center justify-center border border-black/10 text-xs font-black uppercase italic">${c.source}</div><div class="flex-1 text-left"><h4 class="text-2xl md:text-4xl font-black uppercase tracking-tighter group-hover:text-purple-600 transition-colors text-left">${c.title}</h4><p class="text-[10px] font-mono text-gray-400 mt-2 uppercase text-left">${c.date}</p></div><i data-lucide="arrow-up-right" class="w-6 h-6 text-black/20 group-hover:text-black transition-all"></i></div>`).join('')}</div></div></section>`;
         }
 
         function renderInfo() {
             return `
-            <section class="px-4 md:px-8 py-20 fade-in text-left relative z-10">
-                <div class="max-w-[1400px] mx-auto space-y-24">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-4 flex justify-center">
-                            <div class="w-64 h-64 md:w-full md:max-w-md aspect-square rounded-full overflow-hidden shadow-xl border-8 border-gray-50">
+            <section class="px-4 md:px-8 py-20 fade-in text-left relative z-20">
+                <div class="max-w-[1400px] mx-auto space-y-32">
+                    <!-- Byron Mendes: Pequeno e Lado a Lado -->
+                    <div class="flex flex-col md:flex-row gap-12 items-start text-left">
+                        <div class="w-32 h-32 md:w-56 md:h-56 shrink-0">
+                            <div class="img-container aspect-square rounded-full overflow-hidden shadow-xl border-4 border-gray-50">
                                 <img src="${BYRON.photo}" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <div class="lg:col-span-8 space-y-6 text-center md:text-left">
-                            <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-purple-500 italic">Curadoria & Gestão</span>
-                            <h2 class="text-4xl md:text-7xl font-black uppercase tracking-tighter">${BYRON.name}</h2>
-                            <p class="text-base md:text-2xl font-light text-gray-500 leading-relaxed max-w-2xl">
+                        <div class="space-y-6 text-left">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.5em] text-purple-500 italic">Curadoria & Gestão</span>
+                            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">${BYRON.name}</h2>
+                            <p class="text-base md:text-xl font-light text-gray-500 leading-relaxed max-w-2xl">
                                 ${BYRON.bio}
                             </p>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 pt-20 border-t border-gray-100 text-left">
-                        <div class="space-y-8">
-                            <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter">Visita</h2>
-                            <div class="space-y-6">
-                                <div><h4 class="text-[9px] font-bold uppercase text-gray-400 mb-1">Endereço</h4><p class="text-base md:text-lg font-light uppercase tracking-widest">Rua da Assembleia, 40 — Centro, RJ</p></div>
-                                <div><h4 class="text-[9px] font-bold uppercase text-gray-400 mb-1">Horário</h4><p class="text-base md:text-lg font-light uppercase tracking-widest">Terça a Sábado: 11:00 — 19:00</p></div>
+
+                    <!-- Informações Práticas -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 pt-24 border-t border-black/10">
+                        <div class="space-y-12">
+                            <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8]">Visita</h2>
+                            <div class="space-y-8">
+                                <div><h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2">Endereço</h4><p class="text-lg font-light uppercase tracking-widest">Rua da Assembleia, 40 — Centro, RJ</p></div>
+                                <div><h4 class="text-[10px] font-bold uppercase text-gray-400 mb-2">Horário</h4><p class="text-lg font-light uppercase tracking-widest">Terça a Sábado: 11:00 — 19:00</p></div>
                             </div>
                         </div>
-                        <div class="aspect-[16/9] bg-gray-50 flex items-center justify-center border border-gray-100">
-                             <div class="flex flex-col items-center gap-4"><i data-lucide="map-pin" class="w-12 h-12 text-purple-500"></i><span class="text-[9px] font-black uppercase tracking-widest">Rio de Janeiro, Brasil</span></div>
+                        <div class="img-container aspect-[16/10] bg-gray-100 flex items-center justify-center">
+                             <div class="border border-black/10 w-full h-full flex items-center justify-center flex-col gap-6 text-center">
+                                <i data-lucide="map-pin" class="w-12 h-12 text-purple-500"></i>
+                                <span class="text-[10px] font-black uppercase tracking-widest">Rio de Janeiro, Brasil</span>
+                             </div>
                         </div>
                     </div>
                 </div>
